@@ -1,0 +1,26 @@
+[
+    {
+        "language" :"PHP",
+        "degree": 90
+    },
+    {
+        "language" :"Python",
+        "degree": 85
+    },
+    {
+        "language" :"Java",
+        "degree": 70
+    },
+    {
+        "language" :"JavaScript",
+        "degree": 90
+    },
+    {
+        "language" :"Dart",
+        "degree": 70
+    },
+    {
+        "language" :"C++",
+        "degree": 70
+    }
+]

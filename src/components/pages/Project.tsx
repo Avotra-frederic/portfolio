@@ -1,0 +1,92 @@
+import React from "react";
+import {DiNodejs,DiMongodb,DiReact, DiPostgresql,DiPhp, DiPython, DiDocker, DiJavascript, DiLaravel} from "react-icons/di"
+import {SiTypescript, SiNextdotjs, SiLivewire, SiVite} from "react-icons/si"
+function Project() {
+  return (
+    <React.Fragment>
+      <section>
+        <div className="container px-6 py-16 md:p-6 mx-auto h-full grid grid-cols-1 md:grid-cols-2">
+          <div className="h-full flex flex-col justify-center gap-3">
+            <h1 className="text-2xl md:text-6xl font-semibold text-white uppercase">
+              projets
+            </h1>
+            <p className="text-gray-400 text-sm md:text-base">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit,
+              alias aspernatur aliquam atque accusantium laudantium quae,
+              inventore placeat reiciendis perferendis quam quidem quibusdam a
+              officiis fuga quia possimus cupiditate suscipit.
+            </p>
+          </div>
+          <div className="h-full relative top-0 flex flex-col justify-center p-0 md:pl-8 md:pr-7 ">
+            <div className="grid grid-cols-2 gap-3">
+              <div className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+                <h1 className="text-lg flex justify-between items-center">
+                  <span>MadaServiceHub</span>
+                </h1>
+                <p className="montserrat-thin text-sm">
+                  Plateforme web de présation de service à Madagascar
+                </p>
+                <div className="flex items-center gap-2">
+                  <SiNextdotjs size={25} /> 
+                  <DiNodejs size={25} />
+                  <DiMongodb size={25} />
+                  <DiPython size={25} />
+                  <DiDocker size={25} />
+                  <SiTypescript size={20} />
+                </div>
+                <span className="text-sm text-[#40ADE5]">En cours</span>
+              </div>
+              <div className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+                <h1 className="text-lg flex justify-between items-center">
+                  <span>FullCoding</span>
+                </h1>
+                <p className="montserrat-thin text-sm">
+                  Site web du startup FullCoding développé 
+                </p>
+                <div className="flex items-center gap-2">
+                  <DiReact size={25} /> 
+                  <SiTypescript size={20} />
+                </div>
+                <span className="text-sm text-[#40ADE5] ">Juil 2024</span>
+              </div>
+              <div className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+                <h1 className="text-lg flex justify-between items-center">
+                  <span>RALAY Nellie Laï</span>
+                </h1>
+                <p className="montserrat-thin text-sm">
+                  Site web d'une avocate pour la présentation de ces services
+                  juridique.
+                </p>
+                <div className="flex items-center gap-2">
+                  <DiReact size={25} /> 
+                  <DiJavascript size={25} />
+                  <SiVite size={20}/>
+                </div>
+                <span className="text-sm text-[#40ADE5]">juin 2024</span>
+              </div>
+              <div className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+                <h1 className="text-lg flex justify-between items-center">
+                  <span>Plan Sol</span>
+                </h1>
+                <p className="montserrat-thin text-sm">
+                  Application web de gestion et suivi d'un parc informatique
+                  chez SmartOne
+                </p>
+                <div className="flex items-center gap-2">
+                  <DiPhp size={25} /> 
+                  <DiLaravel size={25} />
+                  <SiLivewire size={20}/>
+                  <DiJavascript size={25} />
+                  <DiPostgresql size={25} />
+                </div>
+                <span className="text-sm text-[#40ADE5]">Sept 2021</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </React.Fragment>
+  );
+}
+
+export default Project;
