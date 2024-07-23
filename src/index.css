@@ -9,19 +9,19 @@
 html{
     height: 100%;
     width: 100%;
-    background: #0000009f url('assets/bg.png');
+    background: linear-gradient(to right,#18012ed5, #000018d7), url('assets/bg.png');
     background-size: cover;
     background-position: center;
-    background-blend-mode: soft-light;
+    background-blend-mode: darken;
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow-y: auto;
-    position: relative;
-    top: 0;
+   
 }
 body,#root,section{
     height: 100%;
     font-family: "montserrat-medium";
+    
 }
 .montserrat-bold{
     font-family: "montserrat-bold";

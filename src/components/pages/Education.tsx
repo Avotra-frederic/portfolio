@@ -1,19 +1,16 @@
 import React from "react";
-
+import AnimatedSection from "../context/AnimatedSection";
 function Education() {
   return (
     <React.Fragment>
-      <section>
+      <AnimatedSection>
         <div className="container px-6 py-16 md:p-6 mx-auto h-full grid grid-cols-1 md:grid-cols-2">
           <div className="h-full flex flex-col justify-center gap-3">
             <h1 className="text-2xl md:text-6xl font-semibold text-white uppercase">
               Diplômes
             </h1>
             <p className="text-gray-400 text-sm md:text-base">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit,
-              alias aspernatur aliquam atque accusantium laudantium quae,
-              inventore placeat reiciendis perferendis quam quidem quibusdam a
-              officiis fuga quia possimus cupiditate suscipit.
+              Mon parcours académique solide en informatique de gestion m&apos; fourni les bases nécessaires pour exceller dans le développement de logiciel complexes et innovants.
             </p>
           </div>
           <div className="h-full relative top-0 flex flex-col justify-center p-0 md:pl-8 md:pr-7 ">
@@ -53,7 +50,7 @@ function Education() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </React.Fragment>
   );
 }

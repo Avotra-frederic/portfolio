@@ -1,20 +1,18 @@
 import React from "react";
-import img from "./../../assets/moi.png"
+import img from "./../../assets/moi.png";
+import AnimatedSection from "../context/AnimatedSection";
 
 function Home() {
   return (
     <React.Fragment>
-      <section>
+      <AnimatedSection>
         <div className="container mx-auto h-full grid grid-cols-1 md:grid-cols-2">
           <div className="h-full pt-0  flex flex-col justify-center gap-3 order-2 md:order-1 z-10">
             <h1 className="text-2xl text-center md:text-start md:text-6xl font-semibold text-white uppercase">
               Développeur <br /> <span className="text-white">Full-Stack</span>
             </h1>
             <p className="text-gray-400 text-center text-sm md:text-base md:text-start">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit,
-              alias aspernatur aliquam atque accusantium laudantium quae,
-              inventore placeat reiciendis perferendis quam quidem quibusdam a
-              officiis fuga quia possimus cupiditate suscipit.
+              Je suis Avotra Frederic RAKOTOMAMONJY, un développeur Full-Stack passionné basé à Madagascar, spécialisé dans la création des solutions web,mobiles et application de bureau innovantes.
             </p>
           </div>
           <div className="h-full relative top-0 order-1 md:order-2">
@@ -26,7 +24,7 @@ function Home() {
             />
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </React.Fragment>
   );
 }
