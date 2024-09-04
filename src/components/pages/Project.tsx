@@ -4,7 +4,6 @@ import {
   DiReact,
   DiPostgresql,
   DiPhp,
-  DiPython,
   DiDocker,
   DiJavascript,
   DiLaravel,
@@ -26,18 +25,17 @@ function Project() {
         </div>
         <div className="h-full relative top-0 flex flex-col justify-center p-0 md:pl-8 md:pr-7 ">
           <div className="grid grid-cols-2 gap-3">
-            <Link to={"https://madaservicehub.vercel.app"} target="_blank" className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+            <Link to={"https://espic.jssi-madagascar.mg"} target="_blank" className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
               <h1 className="text-lg flex justify-between items-center">
                 <span>MadaServiceHub</span>
               </h1>
               <p className="montserrat-thin text-sm">
-                Plateforme web de présation de service à Madagascar
+                Plateforme web de cours enligne pour les étudiants de ESPIC Madagascar
               </p>
               <div className="flex items-center gap-2">
                 <SiNextdotjs size={25} />
                 <DiNodejs size={25} />
                 <DiMongodb size={25} />
-                <DiPython size={25} />
                 <DiDocker size={25} />
                 <SiTypescript size={20} />
               </div>
@@ -56,7 +54,7 @@ function Project() {
               </div>
               <span className="text-sm text-[#40ADE5] ">Juil 2024</span>
             </Link>
-            <Link to={"https://ralay-nellie.vercel.app"} target="_blank" className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+            <Link to={"https://ralaynellielaiavocatalacour.mg/"} target="_blank" className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
               <h1 className="text-lg flex justify-between items-center">
                 <span>RALAY Nellie Laï</span>
               </h1>
