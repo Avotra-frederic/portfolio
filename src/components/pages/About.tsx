@@ -5,6 +5,7 @@ import {
   LiaLinkedin,
 } from "react-icons/lia";
 import AnimatedSection from "../context/AnimatedSection";
+import {Link} from "react-router-dom"
 function About() {
   return (
     <AnimatedSection>
@@ -20,28 +21,28 @@ function About() {
         </div>
         <div className="h-full relative top-0 flex flex-col justify-center p-0 md:pl-8 md:pr-16 ">
           <div className="grid grid-cols-2 gap-3">
-            <div className="flex flex-col items-center justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+            <Link to="mailto:fred.avotra@gmail" className="flex flex-col items-center justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
               <LiaAtSolid size={42} color="#40ADE5" />
               <p className="text-sm text-center text-wrap md:text-base">
                 fred.avotra@gmail.com
               </p>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+            </Link>
+            <Link to="tel:+261325608838" className="flex flex-col items-center justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
               <LiaPhoneSolid size={42} color="#40ADE5" />
               <p className="text-sm text-center text-wrap md:text-base">
                 +261 32 56 088 38
               </p>
-            </div>
+            </Link>
             <div className="flex flex-col items-center justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
               <LiaMapMarkerSolid size={42} color="#40ADE5" />
               <p>Antananarivo, Madagascar</p>
             </div>
-            <div className="flex flex-col items-center justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+            <Link to={"https://mg.linkedin.com/in/avotra-frederic"} target="_blank" className="flex flex-col items-center justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
               <LiaLinkedin size={42} color="#40ADE5" />
               <p className="text-sm text-center text-wrap md:text-base">
                 Avotra-frederic
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
