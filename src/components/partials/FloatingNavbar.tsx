@@ -14,36 +14,42 @@ function FloatingNavbar() {
       <div className=" bottom-0  w-full justify-between items-center flex md:flex-col md:w-10 h-fit md:rounded-full fixed md:inset-y-56 z-50 md:right-6 bg-white/10 py-0">
         <Link
           to={""}
+          title="Home"
           className="w-full h-10 flex items-center justify-center center rounded-full text-[#45A9E6] hover:text-[#AF1BBC] hover:font-bold hover:bg-white/70 transition-all gap-2 duration-1000"
         >
           <LiaHomeSolid />
         </Link>
         <Link
           to={"about"}
+          title="about"
           className="w-full h-10 flex items-center justify-center center rounded-full text-[#45A9E6] hover:text-[#AF1BBC] hover:font-bold hover:bg-white/70 transition-all gap-2 duration-1000"
         >
           <LiaUserAltSolid />
         </Link>
         <Link
           to={"education"}
+          title="education"
           className="w-full h-10 flex items-center justify-center center rounded-full text-[#45A9E6] hover:text-[#AF1BBC] hover:font-bold hover:bg-white/70 transition-all gap-2 duration-1000"
         >
           <LiaGraduationCapSolid />
         </Link>
         <Link
           to={"jobs"}
+          title="experiences"
           className="w-full h-10 flex items-center justify-center center rounded-full text-[#45A9E6] hover:text-[#AF1BBC] hover:font-bold hover:bg-white/70 transition-all gap-2 duration-1000"
         >
           <LiaUserMdSolid />
         </Link>
         <Link
           to={"skills"}
+          title="skills"
           className="w-full h-10 flex items-center justify-center center rounded-full text-[#45A9E6] hover:text-[#AF1BBC] hover:font-bold hover:bg-white/70 transition-all gap-2 duration-1000"
         >
           <LiaCodeSolid />
         </Link>
         <Link
           to={"project"}
+          title="my realisations"
           className="w-full h-10 flex items-center justify-center center rounded-full text-[#45A9E6] hover:text-[#AF1BBC] hover:font-bold hover:bg-white/70 transition-all gap-2 duration-1000"
         >
           <LiaSuitcaseSolid />
