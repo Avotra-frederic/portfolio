@@ -8,6 +8,7 @@ import {
 import { SiTypescript, SiLivewire, SiVite } from "react-icons/si";
 import AnimatedSection from "../context/AnimatedSection";
 import { Link } from "react-router-dom";
+import { RxVercelLogo } from "react-icons/rx";
 function Project() {
   return (
     <AnimatedSection>
@@ -54,11 +55,12 @@ function Project() {
                 <span>FullCoding</span>
               </h1>
               <p className="montserrat-thin text-sm">
-                Site web du startup FullCoding développé
+                Site web du startup FullCoding.
               </p>
               <div className="flex items-center gap-2">
                 <DiReact size={25} />
                 <SiTypescript size={20} />
+                <RxVercelLogo size={20}/>
               </div>
               <span className="text-sm text-[#40ADE5] ">Juil 2024</span>
             </Link>
