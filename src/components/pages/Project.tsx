@@ -1,14 +1,11 @@
 import {
-  DiNodejs,
-  DiMongodb,
   DiReact,
   DiPostgresql,
   DiPhp,
-  DiDocker,
   DiJavascript,
   DiLaravel,
 } from "react-icons/di";
-import { SiTypescript, SiNextdotjs, SiLivewire, SiVite } from "react-icons/si";
+import { SiTypescript, SiLivewire, SiVite } from "react-icons/si";
 import AnimatedSection from "../context/AnimatedSection";
 import { Link } from "react-router-dom";
 function Project() {
@@ -20,28 +17,39 @@ function Project() {
             projets
           </h1>
           <p className="text-gray-400 text-sm md:text-base">
-            J&apos;ai travaillé sur divers projets qui démontrent mes capacités à concevoir et développer des solutions sur mésure répondant aux besoins spécifiques des clients.
+            J&apos;ai travaillé sur divers projets qui démontrent mes capacités
+            à concevoir et développer des solutions sur mésure répondant aux
+            besoins spécifiques des clients.
           </p>
         </div>
         <div className="h-full relative top-0 flex flex-col justify-center p-0 md:pl-8 md:pr-7 ">
           <div className="grid grid-cols-2 gap-3">
-            <Link to={"https://espic.jssi-madagascar.mg"} target="_blank" className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+            <Link
+              to={"https://espic.jssi-madagascar.mg"}
+              target="_blank"
+              className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg"
+            >
               <h1 className="text-lg flex justify-between items-center">
-                <span>MadaServiceHub</span>
+                <span>ESPIC Madagascar</span>
               </h1>
               <p className="montserrat-thin text-sm">
-                Plateforme web de cours enligne pour les étudiants de ESPIC Madagascar
+                Plateforme web de cours enligne pour les étudiants de ESPIC
+                Madagascar
               </p>
               <div className="flex items-center gap-2">
-                <SiNextdotjs size={25} />
-                <DiNodejs size={25} />
-                <DiMongodb size={25} />
-                <DiDocker size={25} />
-                <SiTypescript size={20} />
+                <DiPhp size={25} />
+                <DiLaravel size={25} />
+                <SiLivewire size={20} />
+                <DiJavascript size={25} />
+                <DiPostgresql size={25} />
               </div>
-              <span className="text-sm text-[#40ADE5]">En cours</span>
+              <span className="text-sm text-[#40ADE5]">Nov 2022</span>
             </Link>
-            <Link to={"https://full-coding.vercel.app"} target="_blank" className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+            <Link
+              to={"https://full-coding.vercel.app"}
+              target="_blank"
+              className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg"
+            >
               <h1 className="text-lg flex justify-between items-center">
                 <span>FullCoding</span>
               </h1>
@@ -54,7 +62,11 @@ function Project() {
               </div>
               <span className="text-sm text-[#40ADE5] ">Juil 2024</span>
             </Link>
-            <Link to={"https://ralaynellielaiavocatalacour.mg/"} target="_blank" className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg">
+            <Link
+              to={"https://ralaynellielaiavocatalacour.mg/"}
+              target="_blank"
+              className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg"
+            >
               <h1 className="text-lg flex justify-between items-center">
                 <span>RALAY Nellie Laï</span>
               </h1>
