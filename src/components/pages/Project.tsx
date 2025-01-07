@@ -4,6 +4,8 @@ import {
   DiPhp,
   DiJavascript,
   DiLaravel,
+  DiNodejs,
+  DiMongodb,
 } from "react-icons/di";
 import { SiTypescript, SiLivewire, SiVite } from "react-icons/si";
 import AnimatedSection from "../context/AnimatedSection";
@@ -26,29 +28,28 @@ function Project() {
         <div className="h-full relative top-0 flex flex-col justify-center p-0 md:pl-8 md:pr-7 ">
           <div className="grid grid-cols-2 gap-3">
             <Link
-              to={"https://espic.jssi-madagascar.mg"}
+              to={"https://github.com/Avotra-frederic/categoryAPI"}
+              title="Product Category API view on github"
               target="_blank"
               className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg"
             >
               <h1 className="text-lg flex justify-between items-center">
-                <span>ESPIC Madagascar</span>
+                <span>Product Category API</span>
               </h1>
               <p className="montserrat-thin text-sm">
-                Plateforme web de cours enligne pour les étudiants de ESPIC
-                Madagascar
+                API de gestion des produits et des categories.
               </p>
               <div className="flex items-center gap-2">
-                <DiPhp size={25} />
-                <DiLaravel size={25} />
-                <SiLivewire size={20} />
-                <DiJavascript size={25} />
-                <DiPostgresql size={25} />
+                <DiNodejs size={25} />
+                <DiMongodb size={25} />
+                <SiTypescript size={20} />
               </div>
-              <span className="text-sm text-[#40ADE5]">Nov 2022</span>
+              <span className="text-sm text-[#40ADE5]">Nov 2024</span>
             </Link>
             <Link
               to={"https://full-coding.vercel.app"}
               target="_blank"
+              title="visit now"
               className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg"
             >
               <h1 className="text-lg flex justify-between items-center">
@@ -60,13 +61,14 @@ function Project() {
               <div className="flex items-center gap-2">
                 <DiReact size={25} />
                 <SiTypescript size={20} />
-                <RxVercelLogo size={20}/>
+                <RxVercelLogo size={20} />
               </div>
               <span className="text-sm text-[#40ADE5] ">Juil 2024</span>
             </Link>
             <Link
               to={"https://ralaynellielaiavocatalacour.mg/"}
               target="_blank"
+              title="visit now"
               className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-16 backdrop-blur-lg"
             >
               <h1 className="text-lg flex justify-between items-center">
