@@ -1,45 +1,53 @@
-import React, {useEffect} from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
-import Home from "./components/pages/Home";
-import Base from "./components/layouts/Base";
-import About from "./components/pages/About";
-import Education from "./components/pages/Education";
-import Work from "./components/pages/Work";
-import Skills from "./components/pages/Skills";
-import Project from "./components/pages/Project";
+import { useEffect, useState } from "react";
+import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { LiaArrowDownSolid, LiaArrowRightSolid, LiaExternalLinkAltSolid, LiaLinkedin, LiaMapMarkerSolid, LiaEnvelopeSolid, LiaSunSolid, LiaMoonSolid } from "react-icons/lia";
+import portrait from "./assets/moi.png";
+
+const projects = [
+  { number: "01", name: "Plan Sol", type: "Application de gestion de parc informatique", description: "Une application web conçue pour faciliter le suivi et la gestion des équipements informatiques.", stack: ["Laravel", "PHP", "Livewire", "PostgreSQL"], date: "2021", link: "", kind: "application" },
+  { number: "02", name: "Product Category API", type: "API · Backend", description: "Une API pour organiser et gérer des catégories de produits, développée avec une stack Node et TypeScript.", stack: ["Node.js", "TypeScript", "MongoDB"], date: "2024", link: "https://github.com/Avotra-frederic/categoryAPI", kind: "api" },
+  { number: "03", name: "FullCoding", type: "Site web · Startup", description: "Une présence web pour une startup dédiée à la formation et aux services de développement.", stack: ["React", "TypeScript", "Vercel"], date: "2024", link: "https://full-coding.vercel.app", kind: "web" },
+  { number: "04", name: "Cabinet Ralay Nellie Laï", type: "Site web · Juridique", description: "Un site de présentation pour faire découvrir les services et l’activité d’un cabinet d’avocate.", stack: ["React", "JavaScript", "Vite"], date: "2024", link: "https://ralaynellielaiavocatalacour.mg/", kind: "web" },
+];
+
+type Theme = "light" | "dark";
+
+function Header({ theme, onToggleTheme }: { theme: Theme; onToggleTheme: () => void }) {
+  const links = [["Accueil", "/"], ["Projets", "/projets"], ["Parcours", "/parcours"], ["Contact", "/contact"]];
+  return <header className="site-header"><a className="wordmark" href="/" aria-label="Avotra Frederic — accueil"><span className="wordmark-mark">AF<span>.</span></span><span className="wordmark-name">Avotra Frederic</span></a><nav className="main-nav" aria-label="Navigation principale">{links.map(([label, path]) => <NavLink key={path} to={path} end={path === "/"} className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>{label}</NavLink>)}</nav><button className="theme-toggle" type="button" onClick={onToggleTheme} aria-label={`Activer le thème ${theme === "light" ? "sombre" : "clair"}`} title={`Thème ${theme === "light" ? "sombre" : "clair"}`}>{theme === "light" ? <LiaMoonSolid/> : <LiaSunSolid/>}</button><a className="header-cta" href="mailto:fred.avotra@gmail.com">Parlons de votre projet <LiaArrowRightSolid /></a></header>;
+}
+
+function Footer() { return <footer className="site-footer"><span>© {new Date().getFullYear()} Avotra Frederic</span><span>Conçu et développé à Antananarivo <span className="footer-dot">●</span></span><a href="https://linkedin.com/in/avotra-frederic" target="_blank" rel="noreferrer">LinkedIn <LiaExternalLinkAltSolid /></a></footer>; }
+
+function Home() {
+  return <><section className="hero page-width"><div className="hero-copy"><div className="eyebrow"><span className="status-dot"/> Software Engineer · Antananarivo, Madagascar</div><h1>Du besoin métier<br/>à un logiciel<br/><span>prêt à évoluer.</span></h1><p className="hero-intro">Je conçois et développe des applications web et mobiles, des services backend et des architectures logicielles adaptées à leurs usages. J’explore aussi l’automatisation et l’IA pour simplifier les tâches et améliorer les produits.</p><div className="hero-actions"><a className="button button-dark" href="/projets">Explorer mes réalisations <LiaArrowRightSolid /></a><a className="text-link" href="mailto:fred.avotra@gmail.com">Me contacter <LiaArrowRightSolid /></a></div><div className="hero-meta"><span>Full‑Stack Web & Mobile</span><i/> <span>Backend & Architecture</span><i/> <span>Automation & AI</span></div></div><div className="hero-visual"><div className="visual-grid"/><div className="portrait-frame"><img src={portrait} alt="Portrait d’Avotra Frederic" fetchPriority="high"/><div className="portrait-caption"><span className="caption-label">AVOTRA FREDERIC</span><span>Software Engineer · Full‑Stack</span></div></div><div className="floating-note"><span className="note-icon">✳</span><span>Du concept<br/>au produit.</span></div><span className="visual-index">PORTFOLIO — 2025 / 26</span></div><a className="scroll-cue" href="#projets"><span>Défiler pour explorer</span><LiaArrowDownSolid/></a></section><section className="featured-section" id="projets"><div className="page-width"><div className="section-heading"><div><span className="eyebrow">SÉLECTION · PROJETS RÉELS</span><h2>Concevoir. Construire.<br/><span>Faire évoluer.</span></h2></div><NavLink to="/projets" className="text-link">Tous les projets <LiaArrowRightSolid/></NavLink></div><div className="featured-grid">{projects.slice(0,3).map((project) => <ProjectCard key={project.number} project={project}/>)}</div></div></section><section className="intro-band"><div className="page-width intro-band-inner"><span className="eyebrow">MON APPROCHE</span><p>Comprendre le système. Construire avec méthode. <span>Automatiser ce qui peut l’être.</span></p><NavLink to="/parcours" className="round-link" aria-label="Découvrir mon parcours"><LiaArrowRightSolid/></NavLink></div></section></>;
+}
+
+type ProjectItem = typeof projects[number];
+function ProjectCard({project, featured=false}: {project: ProjectItem; featured?: boolean}) {
+  const content = <><div className={`project-art art-${project.kind}`}><span className="art-number">{project.number} / 04</span><div className="art-window"><div className="window-bar"><i/><i/><i/><span>{project.kind === "api" ? "api / v1 / categories" : project.name.toLowerCase()}</span></div><div className="window-content">{project.kind === "api" ? <><span className="code-muted">GET</span><strong>/api/v1/categories</strong><span className="code-success">200 OK</span><div className="code-lines"><b>{"{"}</b><span> "data": [ ... ]</span><b>{"}"}</b></div></> : project.kind === "application" ? <><span className="dash-kicker">TABLEAU DE BORD</span><strong>Parc informatique</strong><div className="dashboard-bars"><i/><i/><i/><i/><i/><i/><i/><i/></div><span className="dash-small">Suivi des équipements</span></> : <><span className="site-kicker">{project.name}</span><strong>{project.kind === "web" ? "Des idées claires." : "Formation & développement."}</strong><span className="site-underline"/><span className="dash-small">Découvrir le projet ↗</span></>}</div></div><span className="art-cross">✳</span></div><div className="project-info"><div className="project-overline"><span>{project.type}</span><span>{project.date}</span></div><h3>{project.name}</h3><p>{project.description}</p><div className="project-bottom"><div className="tag-list">{project.stack.map(tag=><span key={tag}>{tag}</span>)}</div>{project.link && <span className="project-arrow"><LiaArrowRightSolid/></span>}</div></div></>;
+  return project.link ? <a className={`project-card${featured ? " project-featured" : ""}`} href={project.link} target="_blank" rel="noreferrer" aria-label={`${project.name} — ouvrir le projet dans un nouvel onglet`}>{content}</a> : <article className={`project-card${featured ? " project-featured" : ""}`}>{content}</article>;
+}
+
+function Projects() { return <main className="inner-page page-width"><div className="page-intro"><span className="eyebrow">PROJETS · WEB · BACKEND</span><h1>Des idées traduites<br/><span>en logiciels utiles.</span></h1><p>Applications métier, API et sites web : voici une sélection de réalisations. Chaque fiche présente le contexte connu, les technologies utilisées et les liens disponibles.</p></div><div className="project-list">{projects.map((project)=><ProjectCard key={project.number} project={project}/>)}</div><ContactBand/></main>; }
+
+function Journey() { return <main className="inner-page page-width"><div className="page-intro"><span className="eyebrow">PROFIL · EXPÉRIENCE · FORMATION</span><h1>Ingénierie logicielle<br/><span>et transmission.</span></h1><p>Software Engineer basé à Antananarivo, je travaille sur le développement full‑stack et les systèmes backend. Mon parcours associe réalisation d’applications, formation en informatique et apprentissage continu.</p></div><div className="journey-layout"><div className="journey-main"><span className="eyebrow">EXPÉRIENCE</span><article className="timeline-entry"><div className="timeline-date">2022 — AUJOURD’HUI</div><div><h2>Formateur en informatique</h2><p className="entry-place">Joyce &amp; Hope Formation</p><p>Conception et animation de cours en développement et algorithmique. Accompagnement des apprenants dans la compréhension des technologies et la réalisation de leurs premiers projets.</p></div></article><article className="timeline-entry"><div className="timeline-date">2021</div><div><h2>Développeur PHP · Stage</h2><p className="entry-place">SmartOne Madagascar</p><p>Développement de Plan Sol, une application web de gestion et de suivi d’un parc informatique, avec Laravel, Livewire et PostgreSQL.</p></div></article><span className="eyebrow education-label">FORMATION</span><article className="timeline-entry"><div className="timeline-date">2024</div><div><h2>Master I · Informatique de gestion</h2><p className="entry-place">ESPIC Madagascar</p></div></article><article className="timeline-entry"><div className="timeline-date">2022</div><div><h2>Licence · Informatique de gestion</h2><p className="entry-place">ESPIC Madagascar</p></div></article><article className="timeline-entry"><div className="timeline-date">2020</div><div><h2>DTS · Informatique de gestion</h2><p className="entry-place">ESPIC Madagascar</p></div></article></div><aside className="skills-panel"><span className="eyebrow">DOMAINES & TECHNOLOGIES</span><p>Des compétences mobilisées pour concevoir et livrer des logiciels.</p><div className="skill-groups"><h3>Web & frontend</h3><div className="skills-cloud"><span>React</span><span>JavaScript</span><span>TypeScript</span><span>Vite</span></div><h3>Backend & données</h3><div className="skills-cloud"><span>PHP</span><span>Laravel</span><span>Node.js</span><span>PostgreSQL</span><span>MongoDB</span></div><h3>Autres langages</h3><div className="skills-cloud"><span>Python</span><span>Java</span><span>Dart</span><span>C++</span></div></div><div className="skills-note"><span>↗</span> Architecture logicielle, automatisation et IA : des axes de travail à illustrer par des projets dédiés.</div></aside></div><ContactBand/></main>; }
+
+function ContactBand() { return <section className="contact-band"><div><span className="eyebrow">UNE IDÉE À CONSTRUIRE ?</span><h2>Parlons-en.</h2><p>Ouvert aux échanges, collaborations et nouvelles opportunités.</p></div><a className="contact-circle" href="mailto:fred.avotra@gmail.com" aria-label="Envoyer un e-mail"><LiaArrowRightSolid/></a></section>; }
+
+function Contact() { return <main className="inner-page page-width contact-page"><div className="page-intro"><span className="eyebrow">CONTACT · ANTANANARIVO, MADAGASCAR</span><h1>La prochaine bonne idée<br/><span>commence par bonjour.</span></h1><p>Vous avez un projet, une opportunité ou envie d’échanger autour du développement ? Écrivez-moi.</p></div><a className="email-link" href="mailto:fred.avotra@gmail.com">fred.avotra@gmail.com <LiaArrowRightSolid/></a><div className="contact-links"><a href="https://linkedin.com/in/avotra-frederic" target="_blank" rel="noreferrer"><LiaLinkedin/> LinkedIn <LiaExternalLinkAltSolid/></a><a href="mailto:fred.avotra@gmail.com"><LiaEnvelopeSolid/> E-mail <LiaExternalLinkAltSolid/></a><a href="tel:+261325608838"><LiaMapMarkerSolid/> Antananarivo, Madagascar</a></div></main>; }
+
 function App() {
   const location = useLocation();
-  useEffect(() => {
-    document.addEventListener("contextmenu", (event) => {
-      event.preventDefault();
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (
-        event.keyCode === 123 ||
-        (event.ctrlKey && event.shiftKey && event.keyCode === 73)
-      ) {
-        event.preventDefault();
-      }
-    });
-  }, []);
-  return (
-    <React.Fragment>
-      <AnimatePresence initial={false} mode="wait">
-          <Routes location={location} key={location.pathname} >
-            <Route path="" element={<Base />}>
-              <Route path="" Component={Home} />
-              <Route path="about" Component={About} />
-              <Route path="education" Component={Education} />
-              <Route path="jobs" Component={Work} />
-              <Route path="skills" Component={Skills} />
-              <Route path="project" Component={Project} />
-            </Route>
-          </Routes>
-        </AnimatePresence>
-    </React.Fragment>
-  );
+  const [theme, setTheme] = useState<Theme>(() => {
+    const saved = localStorage.getItem("portfolio-theme");
+    if (saved === "light" || saved === "dark") return saved;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  });
+  useEffect(() => { window.scrollTo(0, 0); }, [location.pathname]);
+  useEffect(() => { document.documentElement.dataset.theme = theme; localStorage.setItem("portfolio-theme", theme); }, [theme]);
+  return <div className="app-shell"><Header theme={theme} onToggleTheme={() => setTheme(theme === "light" ? "dark" : "light")}/><AnimatePresence mode="wait"><Routes location={location} key={location.pathname}><Route path="/" element={<Home/>}/><Route path="/projets" element={<Projects/>}/><Route path="/parcours" element={<Journey/>}/><Route path="/contact" element={<Contact/>}/><Route path="*" element={<Home/>}/></Routes></AnimatePresence><Footer/></div>;
 }
 
 export default App;
