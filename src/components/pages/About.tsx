@@ -6,6 +6,7 @@ import {
 } from "react-icons/lia";
 import AnimatedSection from "../context/AnimatedSection";
 import {Link} from "react-router-dom"
+import { profile } from "../../data/profile";
 function About() {
   return (
     <AnimatedSection>
@@ -14,10 +15,7 @@ function About() {
           <h1 className="text-2xl md:text-6xl font-semibold text-white uppercase">
             A propos
           </h1>
-          <p className="text-gray-400 text-sm md:text-base text-justify">
-            Avec plusieurs années d'expérience en développement et une forte expertise en gestion de projet, je suis dédié à transformer des idées en applications performantes.
-            Mon parcours en tant que formateur et développeur m&apos;permis d&apos;acquérir une vision global des téchnologies et des besoins clients.
-          </p>
+          <p className="text-gray-400 text-sm md:text-base text-justify">{profile.aboutText}</p>
         </div>
         <div className="h-full relative top-0 flex flex-col justify-center p-0 md:pl-8 md:pr-16 ">
           <div className="grid grid-cols-2 gap-3">

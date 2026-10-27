@@ -4,13 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "prebuild": "npm run check:encoding",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run typecheck && vite build",
+    "check:encoding": "tsx scripts/check-encoding.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json"
   },
   "dependencies": {
-    "@material-tailwind/react": "^2.1.9",
     "autoprefixer": "^10.4.19",
     "framer-motion": "^11.3.8",
     "localforage": "^1.10.0",
@@ -32,6 +34,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "tsx": "^4.23.15",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   }

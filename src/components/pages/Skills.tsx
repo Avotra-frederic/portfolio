@@ -1,19 +1,8 @@
-import  { useEffect, useState } from "react";
 import skills from "../../data/skills.json";
 import ProgressBar from "../helpers/ProgressBar";
 import AnimatedSection from "../context/AnimatedSection";
 
 function Skills() {
-  const [mySkills, setMySkills] = useState<any>();
-
-  useEffect(() => {
-    setMySkills(skills);
-
-    return () => {
-      setMySkills(null);
-    };
-  }, []);
-
   return (
     <AnimatedSection>
       <div className="container px-6 py-16 md:p-6 mx-auto h-full grid grid-cols-1 md:grid-cols-2">
@@ -27,10 +16,9 @@ function Skills() {
         </div>
         <div className="h-full relative top-0 flex flex-col justify-center p-0 md:pl-8 md:pr-16 ">
           <div className="grid grid-cols-2 gap-3">
-            {mySkills &&
-              mySkills.map((items: any, index: any) => (
+            {skills.map((items) => (
                 <div
-                  key={index + 1}
+                  key={items.language}
                   className="flex flex-col px-8 justify-center gap-1 rounded-md text-white bg-purple-700/5 shadow-xl border-black/5 border-[1px] shadow-black/15 py-8 backdrop-blur-lg"
                 >
                   <h1 className="text-lg flex justify-between items-center">
