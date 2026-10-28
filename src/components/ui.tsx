@@ -1,4 +1,5 @@
 import type { AnchorHTMLAttributes, ElementType, HTMLAttributes, ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -19,6 +20,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 
 export interface ButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
+  path: string;
 }
 
 export function Container({ children, className = "", ...props }: ContainerProps) {
@@ -37,6 +39,6 @@ export function Badge({ children, className = "", ...props }: BadgeProps) {
   return <span className={`ui-badge ${className}`.trim()} {...props}>{children}</span>;
 }
 
-export function ButtonLink({ children, className = "", ...props }: ButtonLinkProps) {
-  return <a className={`ui-button ${className}`.trim()} {...props}>{children}</a>;
+export function ButtonLink({ children, className = "", path, ...props }: ButtonLinkProps) {
+  return <Link to={path} className={`ui-button ${className}`.trim()} {...props}>{children}</Link>;
 }
