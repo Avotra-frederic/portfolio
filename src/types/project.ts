@@ -1,6 +1,12 @@
-export interface ProjectLinks {
+interface ProjectLinks {
   live?: string;
   github?: string;
+}
+
+interface ProjectCvDetails {
+  role?: string;
+  period: string;
+  summary: string;
 }
 
 export interface GalleryImage {
@@ -15,22 +21,22 @@ export interface CodeSample {
   caption?: string;
 }
 
-export interface BeforeAfter {
+interface BeforeAfter {
   before: string;
   after: string;
 }
 
-export interface TeamMember {
+interface TeamMember {
   name: string;
   role: string;
 }
 
-export interface ProjectChallenge {
+interface ProjectChallenge {
   title: string;
   description: string;
 }
 
-export type ProjectStatus = "en production" | "en développement" | "terminé";
+type ProjectStatus = "en production" | "en développement" | "terminé";
 
 export interface Project {
   slug: string;
@@ -55,4 +61,5 @@ export interface Project {
   gallery?: GalleryImage[];
   codeSample?: CodeSample;
   beforeAfter?: BeforeAfter;
+  cv?: ProjectCvDetails;
 }

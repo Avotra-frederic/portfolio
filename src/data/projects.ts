@@ -45,6 +45,12 @@ export const projects: Project[] = [
       "Interface d’administration pour piloter la marketplace.",
       "Déploiement conteneurisé avec Docker et GitHub Actions sur un VPS.",
     ],
+    cv: {
+      role: "Ingénieur logiciel",
+      period: "2025–2026",
+      summary:
+        "Marketplace pour les boutiques locales : développement backend et API, modernisation de l’interface, intégrations et déploiement Docker sur VPS avec GitHub Actions. Collaboration avec RAFANOMEZANTSOA Jean Augustin, développeur frontend.",
+    },
     links: { live: "https://shopinmada.com" },
     cover: "/projects/shopinmada-cover.webp",
   },
@@ -70,6 +76,12 @@ export const projects: Project[] = [
       "Initialisation du catalogue à partir d’un jeu de données.",
     ],
     results: ["API versionnée sous /api/v1, connectée à MongoDB et intégrée au catalogue de ShopInMada."],
+    cv: {
+      role: "Développeur backend",
+      period: "2025–2026",
+      summary:
+        "API REST Node.js et Express pour gérer un catalogue hiérarchique de catégories avec MongoDB.",
+    },
     links: { github: "https://github.com/Avotra-frederic/categoryAPI" },
     cover: "",
     ...(exampleSamples["category-api"] ? { codeSample: exampleSamples["category-api"] } : {}),
@@ -97,6 +109,12 @@ export const projects: Project[] = [
       "Mises à jour et suivi en temps réel.",
     ],
     results: ["Application web et mobile réunissant la recherche publique et les outils de gestion des pharmacies."],
+    cv: {
+      role: "Ingénieur logiciel",
+      period: "Mai – juillet 2026",
+      summary:
+        "Projet client web et mobile pour rechercher des pharmacies et des médicaments disponibles, avec gestion des commandes, stocks, équipes et abonnements. Développé individuellement, du frontend au backend, avec adaptation Android et échanges en temps réel.",
+    },
     links: { github: "https://github.com/Avotra-frederic/hadipharma" },
     cover: "",
   },
@@ -121,6 +139,11 @@ export const projects: Project[] = [
       "Ajout de filtres et de liens relatifs vers les photos.",
     ],
     results: ["Génération d’un classeur Excel à trois colonnes (nom, classe, photo), avec liens relatifs cliquables, tri et filtre."],
+    cv: {
+      period: "2026",
+      summary:
+        "Scripts Python d’automatisation, dont un générateur de classeur Excel à partir de photos.",
+    },
     links: { github: "https://github.com/Avotra-frederic/python-automation" },
     cover: "",
     ...(exampleSamples["python-automation"] ? { codeSample: exampleSamples["python-automation"] } : {}),

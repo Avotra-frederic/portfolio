@@ -1,27 +1,34 @@
-import type { AnchorHTMLAttributes, ElementType, HTMLAttributes, ReactNode } from "react";
-import { Link } from "react-router-dom";
+import type {
+  ButtonHTMLAttributes,
+  HTMLAttributes,
+  ReactNode,
+} from "react";
+import { Link, type LinkProps, type To } from "react-router-dom";
 
-export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
+interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-export interface SectionProps extends HTMLAttributes<HTMLElement> {
+interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
 }
 
-export interface CardProps extends HTMLAttributes<HTMLElement> {
-  as?: ElementType;
+interface CardProps extends HTMLAttributes<HTMLElement> {
+  as?: "div" | "section" | "aside";
   children: ReactNode;
 }
 
-export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
+interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   children: ReactNode;
 }
 
-export interface ButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface ButtonLinkProps extends Omit<LinkProps, "to" | "className"> {
   children: ReactNode;
-  path: string;
+  path: To;
+  className?: string;
 }
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Container({ children, className = "", ...props }: ContainerProps) {
   return <div className={`page-width ${className}`.trim()} {...props}>{children}</div>;
@@ -37,6 +44,10 @@ export function Card({ as: Component = "section", children, className = "", ...p
 
 export function Badge({ children, className = "", ...props }: BadgeProps) {
   return <span className={`ui-badge ${className}`.trim()} {...props}>{children}</span>;
+}
+
+export function Button({ className = "", ...props }: ButtonProps) {
+  return <button className={`button ${className}`.trim()} {...props} />;
 }
 
 export function ButtonLink({ children, className = "", path, ...props }: ButtonLinkProps) {

@@ -1,9 +1,9 @@
-export interface AboutStat {
+interface AboutStat {
   value: string;
   label: string;
 }
 
-export interface Profile {
+interface Profile {
   name: string;
   title: string;
   location: string;
